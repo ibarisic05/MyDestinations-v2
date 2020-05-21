@@ -33,3 +33,6 @@ U trećem djelu vježbe ćemo iskoristiti Swift Package Manager kako bi unutar a
 - [UIImageView](https://developer.apple.com/documentation/uikit/uiimageview) - dokumentacija za UIImageView
 - [Package Manager](https://swift.org/package-manager/) - detaljan opis Swift Package Managera
 - [SDWebImage](https://github.com/SDWebImage/SDWebImage) - library za dohvaćanje i cache slika 
+
+### MISC
+Image url: https://bit.ly/3gh6yH5
