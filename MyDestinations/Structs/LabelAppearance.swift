@@ -20,9 +20,9 @@ protocol LabelAppearanceProtocol {
 struct TitleLabelAppearnce: LabelAppearanceProtocol {
     var font: UIFont = UIFont.systemFont(ofSize: 20)
     
-    var backgroundColor: UIColor = UIColor.red
+    var backgroundColor: UIColor = UIColor.white
     
-    var textColor: UIColor = UIColor.white
+    var textColor: UIColor = UIColor.black
     
     var cornerRadius: CGFloat = 20
 }
@@ -30,9 +30,9 @@ struct TitleLabelAppearnce: LabelAppearanceProtocol {
 struct SubtitleLabelAppearnce: LabelAppearanceProtocol {
     var font: UIFont = UIFont.systemFont(ofSize: 16)
     
-    var backgroundColor: UIColor = UIColor.green
+    var backgroundColor: UIColor = UIColor.white
     
-    var textColor: UIColor = UIColor.white
+    var textColor: UIColor = UIColor.gray
     
     var cornerRadius: CGFloat = 20
 }
