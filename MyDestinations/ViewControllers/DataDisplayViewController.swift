@@ -15,7 +15,9 @@ class DataDisplayViewController: UIViewController {
     
     // MARK: - Variables
     private let cellReuseID: String = "displayCell"
+    private let segueID: String = "detailsSegue"
     private var destinations: [Destination] = []
+    private var selectedDestination: Destination?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -38,6 +40,8 @@ class DataDisplayViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if let dataEntryVC = segue.destination as? DataEntryViewController {
             dataEntryVC.delegate = self
+        } else if let destinationDetailsVC = segue.destination as? DestinationDetailsViewController, let selectedDestination = selectedDestination {
+            destinationDetailsVC.destination = selectedDestination
         }
     }
 }
@@ -86,13 +90,50 @@ extension DataDisplayViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseID, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseID, for: indexPath) as! DataDisplayTableViewCell
         
         let destination = destinations[indexPath.row]
-        
-        cell.textLabel?.text = destination.title
-        cell.detailTextLabel?.text = destination.description
+        cell.config(with: destination)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedDestination = destinations[indexPath.row]
+        performSegue(withIdentifier: segueID, sender: nil)
+    }
+    
+    // MARK: Swipe to delete
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+       
+        let deleteAction = UIContextualAction(style: UIContextualAction.Style.destructive, title: "Delete me") { (_, _, _) in
+            self.removeDestination(at: indexPath)
+        }
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+}
+
+extension DataDisplayViewController {
+    func removeDestination(at indexPath:IndexPath) {
+
+        let alertController = UIAlertController(title: "Obrisi destinaciju?", message: nil, preferredStyle: UIAlertController.Style.alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: UIAlertAction.Style.destructive) { (_) in
+            self.destinations.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            self.saveDestinationsToUserDefaults()
+        }
+        alertController.addAction(deleteAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
     }
 }

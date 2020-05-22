@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		233E86AB2476CF1900AFBF70 /* DataDisplayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233E86AA2476CF1900AFBF70 /* DataDisplayTableViewCell.swift */; };
+		233E86AE2476D46F00AFBF70 /* LabelAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233E86AD2476D46F00AFBF70 /* LabelAppearance.swift */; };
+		233E86B02476E0D700AFBF70 /* DestinationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233E86AF2476E0D700AFBF70 /* DestinationDetailsViewController.swift */; };
+		233E86B32476F14C00AFBF70 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 233E86B22476F14C00AFBF70 /* SDWebImage */; };
+		233E86B52476F14C00AFBF70 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 233E86B42476F14C00AFBF70 /* SDWebImageMapKit */; };
 		23902AEB2476AD11001D586A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23902AEA2476AD11001D586A /* AppDelegate.swift */; };
 		23902AED2476AD11001D586A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23902AEC2476AD11001D586A /* SceneDelegate.swift */; };
 		23902AEF2476AD11001D586A /* DataDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23902AEE2476AD11001D586A /* DataDisplayViewController.swift */; };
@@ -15,9 +20,13 @@
 		23902AF72476AD13001D586A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23902AF52476AD13001D586A /* LaunchScreen.storyboard */; };
 		23902B012476AD39001D586A /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23902B002476AD39001D586A /* Destination.swift */; };
 		23902B032476AD65001D586A /* DataEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23902B022476AD65001D586A /* DataEntryViewController.swift */; };
+		23DC3DB9247869270081B920 /* DestinationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DC3DB8247869270081B920 /* DestinationAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		233E86AA2476CF1900AFBF70 /* DataDisplayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDisplayTableViewCell.swift; sourceTree = "<group>"; };
+		233E86AD2476D46F00AFBF70 /* LabelAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelAppearance.swift; sourceTree = "<group>"; };
+		233E86AF2476E0D700AFBF70 /* DestinationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationDetailsViewController.swift; sourceTree = "<group>"; };
 		23902AE72476AD11001D586A /* MyDestinations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDestinations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23902AEA2476AD11001D586A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23902AEC2476AD11001D586A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +37,7 @@
 		23902AF82476AD13001D586A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23902B002476AD39001D586A /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		23902B022476AD65001D586A /* DataEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntryViewController.swift; sourceTree = "<group>"; };
+		23DC3DB8247869270081B920 /* DestinationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,12 +45,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				233E86B52476F14C00AFBF70 /* SDWebImageMapKit in Frameworks */,
+				233E86B32476F14C00AFBF70 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		233E86AC2476D43D00AFBF70 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				233E86AD2476D46F00AFBF70 /* LabelAppearance.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
 		23902ADE2476AD11001D586A = {
 			isa = PBXGroup;
 			children = (
@@ -60,10 +80,12 @@
 		23902AE92476AD11001D586A /* MyDestinations */ = {
 			isa = PBXGroup;
 			children = (
-				23902AFF2476AD31001D586A /* Models */,
-				23902AFE2476AD2B001D586A /* ViewControllers */,
 				23902AEA2476AD11001D586A /* AppDelegate.swift */,
 				23902AEC2476AD11001D586A /* SceneDelegate.swift */,
+				23DC3DBA247869450081B920 /* Views */,
+				233E86AC2476D43D00AFBF70 /* Structs */,
+				23902AFF2476AD31001D586A /* Models */,
+				23902AFE2476AD2B001D586A /* ViewControllers */,
 				23902AF02476AD11001D586A /* Main.storyboard */,
 				23902AF32476AD13001D586A /* Assets.xcassets */,
 				23902AF52476AD13001D586A /* LaunchScreen.storyboard */,
@@ -77,6 +99,7 @@
 			children = (
 				23902AEE2476AD11001D586A /* DataDisplayViewController.swift */,
 				23902B022476AD65001D586A /* DataEntryViewController.swift */,
+				233E86AF2476E0D700AFBF70 /* DestinationDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -85,8 +108,17 @@
 			isa = PBXGroup;
 			children = (
 				23902B002476AD39001D586A /* Destination.swift */,
+				23DC3DB8247869270081B920 /* DestinationAnnotation.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		23DC3DBA247869450081B920 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				233E86AA2476CF1900AFBF70 /* DataDisplayTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,6 +137,10 @@
 			dependencies = (
 			);
 			name = MyDestinations;
+			packageProductDependencies = (
+				233E86B22476F14C00AFBF70 /* SDWebImage */,
+				233E86B42476F14C00AFBF70 /* SDWebImageMapKit */,
+			);
 			productName = MyDestinations;
 			productReference = 23902AE72476AD11001D586A /* MyDestinations.app */;
 			productType = "com.apple.product-type.application";
@@ -133,6 +169,9 @@
 				Base,
 			);
 			mainGroup = 23902ADE2476AD11001D586A;
+			packageReferences = (
+				233E86B12476F14C00AFBF70 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 23902AE82476AD11001D586A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -160,11 +199,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				233E86B02476E0D700AFBF70 /* DestinationDetailsViewController.swift in Sources */,
+				233E86AE2476D46F00AFBF70 /* LabelAppearance.swift in Sources */,
+				233E86AB2476CF1900AFBF70 /* DataDisplayTableViewCell.swift in Sources */,
 				23902AEF2476AD11001D586A /* DataDisplayViewController.swift in Sources */,
 				23902B032476AD65001D586A /* DataEntryViewController.swift in Sources */,
 				23902AEB2476AD11001D586A /* AppDelegate.swift in Sources */,
 				23902B012476AD39001D586A /* Destination.swift in Sources */,
 				23902AED2476AD11001D586A /* SceneDelegate.swift in Sources */,
+				23DC3DB9247869270081B920 /* DestinationAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +403,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		233E86B12476F14C00AFBF70 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		233E86B22476F14C00AFBF70 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 233E86B12476F14C00AFBF70 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		233E86B42476F14C00AFBF70 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 233E86B12476F14C00AFBF70 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 23902ADF2476AD11001D586A /* Project object */;
 }

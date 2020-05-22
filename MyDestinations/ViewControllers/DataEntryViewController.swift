@@ -20,6 +20,12 @@ class DataEntryViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var urlLabel: UILabel!
+    @IBOutlet weak var urlTextField: UITextField!
+    @IBOutlet weak var latLabel: UILabel!
+    @IBOutlet weak var latTextField: UITextField!
+    @IBOutlet weak var longLabel: UILabel!
+    @IBOutlet weak var longTextField: UITextField!
     
     // MARK: - Variables
     weak var delegate: DataEntryViewControllerDelegate?
@@ -32,11 +38,21 @@ class DataEntryViewController: UIViewController {
         
         titleLabel.text = "Naziv:"
         descriptionLabel.text = "Opis:"
+        latLabel.text = "Lat:"
+        longLabel.text = "Long:"
+        urlLabel.text = "URL:"
         
         saveButton.setTitle("Save", for: .normal)
         
         titleTextField.delegate = self
         descriptionTextField.delegate = self
+        latTextField.delegate = self
+        longTextField.delegate = self
+        urlTextField.delegate = self
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
 
     // MARK: - Actions
@@ -47,12 +63,17 @@ class DataEntryViewController: UIViewController {
         
         guard titleText.count > 0 && descriptionText.count > 0 else {return}
         
-        let destination = Destination(title: titleText, description: descriptionText)
+        let lat: Double? = Double(latTextField.text ?? "")
+        let long: Double? = Double(longTextField.text ?? "")
+
+        let destination = Destination(title: titleText, description: descriptionText, lat: lat, long: long, imageUrl: urlTextField.text)
+        
         delegate?.created(newDestination: destination)
         navigationController?.popViewController(animated: true)
     }
 }
 
+// MARK: - UITextFieldDelegate
 extension DataEntryViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

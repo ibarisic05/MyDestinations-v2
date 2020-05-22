@@ -17,11 +17,17 @@ class Destination: Codable {
     let id: String = UUID().uuidString
     var title: String
     var description: String
+    let lat: Double?
+    let long: Double?
+    let imageUrl: String?
     
     // MARK: - Init
-    init(title: String, description: String) {
+    init(title: String, description: String, lat: Double? = nil, long: Double? = nil, imageUrl: String? = nil) {
         self.title = title
         self.description = description
+        
+        self.lat = lat
+        self.long = long
+        self.imageUrl = imageUrl
     }
-    
 }
