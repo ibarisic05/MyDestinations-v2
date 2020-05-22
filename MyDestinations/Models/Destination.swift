@@ -25,9 +25,14 @@ final class Destination: Codable {
     init(title: String, description: String, lat: Double? = nil, long: Double? = nil, imageUrl: String? = nil) {
         self.title = title
         self.description = description
-        
-        self.lat = lat
-        self.long = long
         self.imageUrl = imageUrl
+        
+        if let lat = lat, abs(lat) <= 90 {
+            self.lat = lat
+        }
+        
+        if let long = long, abs(long) <= 180 {
+            self.long = long
+        }
     }
 }
