@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class DestinationAnnotation: NSObject, MKAnnotation {
+final class DestinationAnnotation: NSObject, MKAnnotation {
     
     // MARK: - Variables
     var title: String?

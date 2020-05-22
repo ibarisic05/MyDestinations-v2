@@ -12,7 +12,7 @@ protocol DataEntryViewControllerDelegate: class {
     func created(newDestination: Destination)
 }
 
-class DataEntryViewController: UIViewController {
+final class DataEntryViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var titleLabel: UILabel!
@@ -34,6 +34,16 @@ class DataEntryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configUI()
+        setDelegates()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    // MARK: - Internal Config
+    private func configUI() {
         title = "Unos nove destinacije"
         
         titleLabel.text = "Naziv:"
@@ -42,17 +52,22 @@ class DataEntryViewController: UIViewController {
         longLabel.text = "Long:"
         urlLabel.text = "URL:"
         
-        saveButton.setTitle("Save", for: .normal)
+        titleLabel.setAppearance(appearance: SubtitleLabelAppearnce())
+        descriptionLabel.setAppearance(appearance: SubtitleLabelAppearnce())
+        latLabel.setAppearance(appearance: SubtitleLabelAppearnce())
+        longLabel.setAppearance(appearance: SubtitleLabelAppearnce())
+        urlLabel.setAppearance(appearance: SubtitleLabelAppearnce())
         
+        saveButton.setTitle("Save", for: .normal)
+
+    }
+    
+    private func setDelegates() {
         titleTextField.delegate = self
         descriptionTextField.delegate = self
         latTextField.delegate = self
         longTextField.delegate = self
         urlTextField.delegate = self
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
     }
 
     // MARK: - Actions

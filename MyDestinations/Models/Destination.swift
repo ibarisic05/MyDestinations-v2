@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Destination: Codable {
+final class Destination: Codable {
     
     // MARK: - Static variables
     static let userDefaultsKey = "DestinationKey"

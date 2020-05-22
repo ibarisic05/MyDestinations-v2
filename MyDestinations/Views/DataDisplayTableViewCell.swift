@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class DataDisplayTableViewCell: UITableViewCell {
+final class DataDisplayTableViewCell: UITableViewCell {
     
     // MARK: - Outlets
     @IBOutlet weak var destinationImageView: UIImageView!

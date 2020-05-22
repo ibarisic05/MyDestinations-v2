@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import SDWebImage
 
-class DestinationDetailsViewController: UIViewController {
+final class DestinationDetailsViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!

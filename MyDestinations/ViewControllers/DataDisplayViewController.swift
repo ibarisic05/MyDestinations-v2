@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DataDisplayViewController: UIViewController {
+final class DataDisplayViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -25,12 +25,15 @@ class DataDisplayViewController: UIViewController {
 
         title = "Moje destinacije"
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        
+        setDelegates()
         loadDestinationsFromUserDefaults()
     }
     
+    // MARK: - Internal config
+    private func setDelegates() {
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
 
     // MARK: - Navigation
 
