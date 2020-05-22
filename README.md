@@ -52,7 +52,7 @@ U trećem djelu vježbe ćemo iskoristiti Swift Package Manager kako bi unutar a
 - Napomena: slika se prikazuje ukoliko je postavljena
 
 ### Prikaz screen-ova
-1. [Lista proizvoda]([https://raw.githubusercontent.com/ibarisic05/MyDestinations/master/photos/lista_destinacija.png](https://raw.githubusercontent.com/ibarisic05/MyDestinations/master/photos/lista_destinacija.png))
+1. [Lista proizvoda](https://raw.githubusercontent.com/ibarisic05/MyDestinations/master/photos/lista_destinacija.png)
 2. [Swipe to delete](https://raw.githubusercontent.com/ibarisic05/MyDestinations/master/photos/swipe_to_delete.png)
 3. [Delete confirmation](https://raw.githubusercontent.com/ibarisic05/MyDestinations/master/photos/alert_delete.png)
 4. [Unos destinacije](https://raw.githubusercontent.com/ibarisic05/MyDestinations/master/photos/unos_destinacije.png)
