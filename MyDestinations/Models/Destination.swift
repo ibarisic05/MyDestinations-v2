@@ -17,8 +17,8 @@ final class Destination: Codable {
     let id: String = UUID().uuidString
     var title: String
     var description: String
-    let lat: Double?
-    let long: Double?
+    var lat: Double?
+    var long: Double?
     let imageUrl: String?
     
     // MARK: - Init
