@@ -21,7 +21,7 @@ U trećem djelu vježbe ćemo iskoristiti Swift Package Manager kako bi unutar a
 
 ## Zadatak 1
 
-- Proširiti Destination objekt da ima informacije o url-u slike, latitudi i longitudi destinacije
+- Proširiti Destination objekt da ima informacije o url-u slike, latitudi i longitudi destinacije. Unutar DataEntryViewController-a kreirati UI elemente potrebne za unos novih parametara destinacije.
 
 - Kreirati custom cell koji će u sebi prikazivati naslov i opis destinacije
 
