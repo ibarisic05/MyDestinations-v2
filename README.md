@@ -1,3 +1,5 @@
+# MyDestinations
+Cilj laboratorijskih vježbi je kreirati mobilnu aplikaciju u kojoj korisnik može pohranjivati podatke o turističkim destinacijama koje je isti posijetio. Kroz različite zahtijeve vježbe prolaze kroz osnovne građevne blokove koji se koriste prilikom izrade iOS mobilnih aplikacija. Od struktura, objekata i klasa do korištenja vanjskih library-a i dependency-ja. Prolaskom kroz ove laboratorijske vježbe student stječe osnovna znanja za razvoj iOS mobilnih aplikacija.
 
 # Razvoj mobilnih aplikacija - LV 2
 
