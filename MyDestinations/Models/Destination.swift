@@ -14,12 +14,13 @@ class Destination: Codable {
     static let userDefaultsKey = "DestinationKey"
 
     // MARK: - Variables
-    let id: String = UUID().uuidString
+    let id: String
     var title: String
     var description: String
     
     // MARK: - Init
     init(title: String, description: String) {
+        self.id = UUID().uuidString
         self.title = title
         self.description = description
     }
