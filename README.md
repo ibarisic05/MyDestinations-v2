@@ -25,33 +25,33 @@ U trećem djelu vježbe ćemo iskoristiti Swift Package Manager kako bi unutar a
 
 - Proširiti Destination objekt da ima informacije o url-u slike, latitudi i longitudi destinacije. Unutar DataEntryViewController-a kreirati UI elemente potrebne za unos novih parametara destinacije.
 
-- Kreirati custom cell koji će u sebi prikazivati naslov i opis destinacije
-
-- Kreirati strukturu pomoću koje ćemo style-ati cell (napraviti Extension na UILabel kako bismo mogli lakše aplicirati željeni style)
-
 - Omogućiti brisanje cell-a pomoću UITableViewRowAction-a
 
 - Dodati UIAlertController za potvrdu brisanja akcije
 
+- Kreirati custom cell koji će u sebi prikazivati naslov i opis destinacije
+
+- Kreirati strukturu pomoću koje ćemo style-ati cell (napraviti Extension na UILabel kako bismo mogli lakše aplicirati željeni style)
   
 
 ## Zadatak 2
-
-- Kroz delegat metodu UITableView-a omogućiti prikaz detalja o destinaciji
-
-- Detalji destinacije moraju sadržavati prikaz slijedećih stavki: id, naslov i opis destinacije (za style elemenata koji prikazuju id, naslov i opis koristiti strukturu koju smo definirali u prethodnom zadatku)
-
-- Ukoliko destinacija ima unešene informacije o latitudi i longitudi dodati MKMapView i na mapi prikazati lokaciju odabrane destinacije
-
-## Zadatak 3
 
 - Kroz Swift Package Manager dodati SDWebImage kao external library
 
 - Na listi svih destinacija editirati cell koji smo kreirali u prvom zadatku i na isti dodati UIImageView za prikaz slike (prikazati sliku pomoću SDWebImageView-a)
 
+- Napomena: slika se prikazuje ukoliko je postavljena
+
+## Zadatak 3
+
+- Kroz delegat metodu UITableView-a omogućiti otvaranje prikaza detalja o destinaciji
+
+- Detalji destinacije moraju sadržavati prikaz slijedećih stavki: id, naslov i opis destinacije (za style elemenata koji prikazuju id, naslov i opis koristiti strukturu koju smo definirali prethodno)
+
 - Kada se otvore detalji destinacije, također dodati UIImageView i prikazati sliku destinacije unutar istoga
 
-- Napomena: slika se prikazuje ukoliko je postavljena
+- Ukoliko destinacija ima unešene informacije o latitudi i longitudi dodati MKMapView i na mapi prikazati lokaciju odabrane destinacije
+
 
 ### Prikaz screen-ova
 1. [Lista proizvoda](https://raw.githubusercontent.com/ibarisic05/MyDestinations/master/photos/lista_destinacija.png)
