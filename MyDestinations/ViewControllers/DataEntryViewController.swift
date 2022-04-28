@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol DataEntryViewControllerDelegate: class {
+protocol DataEntryViewControllerDelegate: AnyObject {
     func created(newDestination: Destination)
 }
 
